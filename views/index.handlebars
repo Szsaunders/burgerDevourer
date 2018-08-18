@@ -3,8 +3,11 @@
 <h2>Burgers in Waiting</h2>
 
 <ul>
-  {{#each cats}}
-    {{#unless devoured}}
+  {{#each burgers}}
+  {{#unless devoured}}
+    <li>
+      <p class="burger-item" id={{this.id}}>{{this.burger_name}}</p>
+    </li>
     {{/unless}}
   {{/each}}
 </ul>
@@ -12,8 +15,11 @@
 <h2>Burgers Devoured!</h2>
 
 <ul>
-  {{#each cats}}
+  {{#each burgers}}
     {{#if devoured}}
+    <li>
+      <p id={{this.id}}>{{this.burger_name}}</p>
+    </li>
     {{/if}}
   {{/each}}
 </ul>
@@ -23,7 +29,7 @@
 
   <div class="form-group">
     <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="ca">
   </div>
 
   <button type="submit">Add Burg</button>
